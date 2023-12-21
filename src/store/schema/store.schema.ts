@@ -7,9 +7,6 @@ export class Store {
 
     @Prop()
     address: string;
-
-    @Prop({ default: [] })
-    storeProducts: { id: string, stock: number }[];
 }
 
 export const StoreSchema = SchemaFactory.createForClass(Store);

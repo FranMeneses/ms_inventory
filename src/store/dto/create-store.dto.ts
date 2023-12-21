@@ -1,15 +1,4 @@
-import { Type } from 'class-transformer';
-import { IsString, IsNotEmpty, IsOptional, IsNumber, IsArray, ArrayMinSize, ValidateNested } from 'class-validator';
-
-class StoreProductDto {
-    @IsNotEmpty()
-    @IsString()
-    id: string;
-
-    @IsNotEmpty()
-    @IsNumber()
-    stock: number;
-}
+import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateStoreDto {
     @IsNotEmpty()
@@ -19,11 +8,4 @@ export class CreateStoreDto {
     @IsOptional()
     @IsString()
     address: string;
-
-    @IsOptional()
-    @IsArray()
-    @ArrayMinSize(1)
-    @ValidateNested({ each: true })
-    @Type(() => StoreProductDto)
-    storeProducts: StoreProductDto[];
 }

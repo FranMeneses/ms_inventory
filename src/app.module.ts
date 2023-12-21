@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { StoreModule } from './store/store.module';
+import { StoreProductModule } from './store-product/store-product.module';
 
 dotenv.config();
 
@@ -18,7 +19,8 @@ dotenv.config();
         uri: process.env.MONGO_URI,
       }),
     }),
-    StoreModule
+    StoreModule,
+    StoreProductModule
   ],
   controllers: [AppController],
   providers: [AppService],
