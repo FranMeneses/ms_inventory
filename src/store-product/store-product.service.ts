@@ -45,4 +45,12 @@ export class StoreProductService {
     async findAll(): Promise<StoreProduct[]> {
         return await this.storeProductModel.find();
     }
+
+    async getProductDetails(id_store: string, id_product: string): Promise<StoreProduct> {
+        const storeProduct = await this.storeProductModel.findOne({ id_store, id_product }).exec();
+        if (!storeProduct) {
+            throw new NotFoundException('StoreProduct not found');
+        }
+        return storeProduct;
+    }
 }

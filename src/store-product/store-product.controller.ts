@@ -33,4 +33,9 @@ export class StoreProductController {
     async findAll() {
         return await this.storeProductService.findAll();
     }
+
+    @MessagePattern(StoreProductMSG.GET_PRODUCT_DETAILS)
+    async getProductDetails(@Payload('id_store') id_store: string, @Payload('id_product') id_product: string) {
+        return await this.storeProductService.getProductDetails(id_store, id_product);
+    }
 }

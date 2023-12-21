@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
-import { Client, ClientsModule, Transport } from '@nestjs/microservices';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Store } from 'src/store/schema/store.schema';
-import { StoreService } from 'src/store/store.service';
 import { RabbitMQ } from 'src/utils/constants';
 import { StoreProduct, StoreProductSchema } from './schema/store-product.schema';
 import { StoreProductService } from './store-product.service';
