@@ -1,6 +1,6 @@
 import { Body, Controller } from "@nestjs/common";
 import { MessagePattern, Payload } from "@nestjs/microservices";
-import { StoreProductMSG } from "src/utils/constants";
+import { StoreProductMSG } from "../utils/constants";
 import { CreateStoreProductDto } from "./dto/create-store-product.dto";
 import { UpdateStoreProductDto } from "./dto/update-store-product.dto";
 import { StoreProductService } from "./store-product.service";
